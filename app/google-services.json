@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "411089094066",
+    "project_id": "social-graph-5b3c9",
+    "storage_bucket": "social-graph-5b3c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411089094066:android:137eb0433802dd453250ab",
+        "android_client_info": {
+          "package_name": "com.akshatsahijpal.socialgraph"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411089094066-fiafa7cvcua4dnsnrck3bc61ohs15epl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYK5KutC8kL4iwa4gVnWAKextxTx1mIMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411089094066-fiafa7cvcua4dnsnrck3bc61ohs15epl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
