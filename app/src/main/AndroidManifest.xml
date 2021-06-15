@@ -3,8 +3,7 @@
     package="com.akshatsahijpal.socialgraph">
 <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:name=".app"
-        android:allowBackup="true"
+        android:name=".util.AppH"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
