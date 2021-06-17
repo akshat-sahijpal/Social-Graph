@@ -1,18 +1,39 @@
 package com.akshatsahijpal.socialgraph.repository.auth
 
+import android.content.Context
+import com.akshatsahijpal.socialgraph.data.entities.User
+import com.akshatsahijpal.socialgraph.ui.util.safeCall
 import com.akshatsahijpal.socialgraph.util.Resource
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class AuthRepoC: AuthRepository {
-    override suspend fun registerNewUser(
+class AuthRepoC @Inject constructor(
+    cont: Context
+){
+    private var auth: FirebaseAuth = FirebaseAuth.getInstance()
+    private var db = FirebaseFirestore.getInstance().collection("USER")
+    suspend fun registerNewUser(
         userMail: String,
         userName: String,
         userPassword: String
     ): Resource<AuthResult> {
-        TODO("Not yet implemented")
+        return withContext(Dispatchers.IO) {
+            safeCall {
+                val result = auth.createUserWithEmailAndPassword(userMail, userPassword).await()
+                val user = User(uid = result.user?.uid!!, username = userName)
+                db.document(result.user?.uid!!).set(user).await()
+                Resource.Success(result)
+            }
+        }
     }
 
-    override suspend fun loginUser(userMail: String, userPassword: String): Resource<AuthResult> {
-        TODO("Not yet implemented")
+    suspend fun loginUser(userMail: String, userPassword: String): Resource<AuthResult> {
+        TODO()
     }
 }

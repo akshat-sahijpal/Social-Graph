@@ -12,4 +12,5 @@
     <string name="sign_up_to_get_started">Sign up to get Started</string>
     <string name="full_name">Full Name</string>
     <string name="im_already_a_member_sign_in">Im already a member, Sign In</string>
+    <string name="sign_up">Sign up</string>
 </resources>
