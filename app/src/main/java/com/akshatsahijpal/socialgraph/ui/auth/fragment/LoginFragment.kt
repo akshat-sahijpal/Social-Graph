@@ -38,6 +38,5 @@ class LoginFragment : Fragment() {
             }
         }
 
-        model.test()
     }
 }

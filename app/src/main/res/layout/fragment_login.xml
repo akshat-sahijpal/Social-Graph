@@ -31,7 +31,6 @@
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="30sp"
-
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textStyle="bold"
@@ -48,7 +47,6 @@
                 android:layout_marginTop="14dp"
                 android:text="@string/sign_in_to_continue"
                 android:textAlignment="textStart"
-
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textSize="20sp"
@@ -139,7 +137,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/Pass_id_ed"
                 app:layout_constraintVertical_bias="0.164" />
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="103dp"
+                android:layout_height="84dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="41dp"
+                android:layout_marginBottom="124dp"
+                android:src="@drawable/networking__1_"
+                app:layout_constraintBottom_toTopOf="@+id/Name_id_ed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <TextView

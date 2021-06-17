@@ -3,6 +3,7 @@ package com.akshatsahijpal.socialgraph.ui.auth.vm
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import com.akshatsahijpal.socialgraph.repository.auth.AuthRepoC
+import com.akshatsahijpal.socialgraph.util.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
@@ -13,5 +14,4 @@ class LoginViewModel @Inject constructor(
     context: Context,
     private var dispatcher: CoroutineDispatcher
 ) : ViewModel() {
-   fun test() = "RTX"
 }

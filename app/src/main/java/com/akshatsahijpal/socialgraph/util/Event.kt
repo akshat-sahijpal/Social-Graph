@@ -5,7 +5,7 @@ class Event<out T>(private var data: T) {
         private set
 
     fun getContentIfNotHandled(): T? {
-        return if (isHandled == false) {
+        return if (!isHandled) {
             isHandled = true
             data
         } else null
