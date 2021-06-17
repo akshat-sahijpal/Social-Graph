@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Social Graph</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">Password</string>
+    <string name="welcome">Welcome,</string>
+    <string name="login">Login</string>
+    <string name="sign_in_to_continue">Sign in to continue!</string>
+    <string name="i_m_a_new_user_sign_up">Im a new user,<b> Sign Up</b></string>
+    <string name="create_account" >Create Account,</string>
+    <string name="sign_up_to_get_started">Sign up to get Started</string>
+    <string name="full_name">Full Name</string>
+    <string name="im_already_a_member_sign_in">Im already a member, Sign In</string>
 </resources>

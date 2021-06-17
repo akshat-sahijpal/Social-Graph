@@ -1,6 +1,6 @@
 package com.akshatsahijpal.socialgraph.util
 // class gives status of data being unloaded from remote source
-    sealed class Resource<T>(var data: T? = null, var message: String? = null) {
+sealed class Resource<T>(var data: T? = null, var message: String? = null) {
     class Success<T>(data: T)// if Successful, called with data
         : Resource<T>(data)
     class Fail<T>(data: T? = null, message: String)// if Not Successful, called with error message
