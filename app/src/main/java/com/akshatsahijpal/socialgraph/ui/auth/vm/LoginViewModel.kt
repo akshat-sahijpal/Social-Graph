@@ -48,7 +48,7 @@ class LoginViewModel @Inject constructor(
             _observeRegisterStatus.postValue(Event(Resource.Fail(message = error)))
         }
         _observeRegisterStatus.postValue(Event(Resource.Loading()))
-        viewModelScope.launch {
+        viewModelScope.launch (dispatcher){
             val result : Resource<AuthResult> = repo.registerNewUser(userMail = email, userName = username, userPassword = password)
             _observeRegisterStatus.postValue(Event(result))
         }
