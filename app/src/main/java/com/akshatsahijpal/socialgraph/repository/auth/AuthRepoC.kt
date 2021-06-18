@@ -1,6 +1,7 @@
 package com.akshatsahijpal.socialgraph.repository.auth
 
 import android.content.Context
+import android.util.Log
 import com.akshatsahijpal.socialgraph.data.entities.User
 import com.akshatsahijpal.socialgraph.repository.util.safeCall
 import com.akshatsahijpal.socialgraph.util.Resource
@@ -24,7 +25,9 @@ class AuthRepoC @Inject constructor(
     ): Resource<AuthResult> {
         return withContext(Dispatchers.IO) {
             safeCall {
-                val result = auth.createUserWithEmailAndPassword(userMail, userPassword).await()
+                Log.d("Firebase", "${userMail.trim()}, ${userPassword.trim()}")
+                val result = auth.createUserWithEmailAndPassword(userMail.trim(), userPassword.trim()).await()
+
                 val uid = result.user?.uid!!
                 val user = User(uid = uid, username = userName)
                 db.document(uid).set(user).await()

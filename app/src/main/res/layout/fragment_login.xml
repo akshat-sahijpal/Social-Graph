@@ -58,7 +58,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/Name_id_ed"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxBackgroundColor="@color/white"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
@@ -88,7 +88,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/Pass_id_ed"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxBackgroundColor="@color/white"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
