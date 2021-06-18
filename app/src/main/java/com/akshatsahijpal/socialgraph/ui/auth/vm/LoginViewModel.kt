@@ -31,10 +31,26 @@ class LoginViewModel @Inject constructor(
     context: Context,
     private var dispatcher: CoroutineDispatcher
 ) : ViewModel() {
+
     private var _observeRegisterStatus = MutableLiveData<Event<Resource<AuthResult>>>() // Mutable
     var observerRegister: LiveData<Event<Resource<AuthResult>>> =
         _observeRegisterStatus // ImMutable
 
+
+    private var _observeLoginStatus = MutableLiveData<Event<Resource<AuthResult>>>() // Mutable
+    var observerLogin: LiveData<Event<Resource<AuthResult>>> =
+        _observeLoginStatus // ImMutable
+    fun loginUser(email: String, password: String) {
+        if (email.isEmpty() || password.isEmpty()){
+            _observeLoginStatus.postValue(Event(Resource.Fail(message = EMPTY_FIELD_ERROR)))
+        }else{
+            _observeLoginStatus.postValue(Event(Resource.Loading()))
+            viewModelScope.launch (dispatcher) {
+                val res = repo.loginUser(userMail = email, userPassword = password)
+                _observeLoginStatus.postValue(Event(res))
+            }
+        }
+    }
     fun registerUser(username: String, email: String, password: String) {
         val error: String? =
             if (username.isEmpty() || email.isEmpty() || password.isEmpty()) EMPTY_FIELD_ERROR

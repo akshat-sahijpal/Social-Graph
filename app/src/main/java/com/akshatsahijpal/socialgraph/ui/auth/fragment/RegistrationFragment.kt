@@ -1,6 +1,7 @@
 package com.akshatsahijpal.socialgraph.ui.auth.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.navigation.Navigation
 import com.akshatsahijpal.socialgraph.R
 import com.akshatsahijpal.socialgraph.databinding.FragmentRegistrationBinding
 import com.akshatsahijpal.socialgraph.ui.auth.vm.LoginViewModel
+import com.akshatsahijpal.socialgraph.ui.mainpage.MainPageActivity
 import com.akshatsahijpal.socialgraph.ui.util.snackBar
 import com.akshatsahijpal.socialgraph.util.EventObserver
 import dagger.hilt.android.AndroidEntryPoint
@@ -85,6 +87,10 @@ class RegistrationFragment : Fragment() {
                 onSuccess = {
                     _binding.registerProgressBar.isVisible = false
                     snackBar("Success!!!")
+                    Intent(requireContext(), MainPageActivity::class.java).also {
+                        startActivity(it)
+                        requireActivity().finish()
+                    }
                 })
         )
     }

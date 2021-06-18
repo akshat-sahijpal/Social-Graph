@@ -27,7 +27,6 @@ class AuthRepoC @Inject constructor(
             safeCall {
                 Log.d("Firebase", "${userMail.trim()}, ${userPassword.trim()}")
                 val result = auth.createUserWithEmailAndPassword(userMail.trim(), userPassword.trim()).await()
-
                 val uid = result.user?.uid!!
                 val user = User(uid = uid, username = userName)
                 db.document(uid).set(user).await()
@@ -37,6 +36,11 @@ class AuthRepoC @Inject constructor(
     }
 
     suspend fun loginUser(userMail: String, userPassword: String): Resource<AuthResult> {
-        TODO()
+        return withContext(Dispatchers.IO) {
+            safeCall {
+                val res = auth.signInWithEmailAndPassword(userMail, userPassword).await()
+                Resource.Success(res)
+            }
+        }
     }
 }
