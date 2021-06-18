@@ -1,4 +1,4 @@
-package com.akshatsahijpal.socialgraph.ui.util
+package com.akshatsahijpal.socialgraph.repository.util
 
 import com.akshatsahijpal.socialgraph.util.Resource
 
