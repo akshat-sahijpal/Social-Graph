@@ -3,6 +3,7 @@ package com.akshatsahijpal.socialgraph.di
 import android.content.Context
 import com.akshatsahijpal.socialgraph.R
 import com.akshatsahijpal.socialgraph.repository.auth.AuthRepoC
+import com.akshatsahijpal.socialgraph.repository.main.MainBulkRepository
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
@@ -43,4 +44,9 @@ object AppModule {
     @Singleton
     @Provides
     fun provideAuthRepository(@ApplicationContext context: Context) = AuthRepoC(context)
+
+
+    @Singleton
+    @Provides
+    fun provideMasterRepository() = MainBulkRepository()
 }

@@ -123,7 +123,7 @@
                 android:layout_height="54dp"
                 android:layout_width="200dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/cus"
+                android:backgroundTint="@color/purple_700"
                 android:text="@string/login"
                 android:textAlignment="center"
                 android:textAllCaps="false"

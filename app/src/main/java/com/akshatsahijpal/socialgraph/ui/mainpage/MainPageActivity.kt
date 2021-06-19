@@ -1,8 +1,11 @@
 package com.akshatsahijpal.socialgraph.ui.mainpage
 
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -17,6 +20,7 @@ class MainPageActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainAppBinding.inflate(layoutInflater)
         setContentView(_binding.root)
+        defaultSettings()
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView3)
                 as NavHostFragment
         _binding.bottomNavigation.apply {
@@ -34,5 +38,10 @@ class MainPageActivity: AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_nav_menu, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+    @SuppressLint("SourceLockedOrientationActivity")
+    private fun defaultSettings() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 }

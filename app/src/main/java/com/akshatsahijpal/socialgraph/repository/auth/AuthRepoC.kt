@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.akshatsahijpal.socialgraph.data.entities.User
 import com.akshatsahijpal.socialgraph.repository.util.safeCall
+import com.akshatsahijpal.socialgraph.util.Constants.USER_DB_PATH
 import com.akshatsahijpal.socialgraph.util.Resource
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -17,7 +18,7 @@ class AuthRepoC @Inject constructor(
     cont: Context
 ) {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
-    private var db = FirebaseFirestore.getInstance().collection("USER")
+    private var db = FirebaseFirestore.getInstance().collection(USER_DB_PATH)
     suspend fun registerNewUser(
         userMail: String,
         userName: String,

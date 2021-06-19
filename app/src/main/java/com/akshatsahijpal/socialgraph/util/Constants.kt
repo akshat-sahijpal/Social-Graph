@@ -1,8 +1,7 @@
 package com.akshatsahijpal.socialgraph.util
 
 object Constants {
-    const val DEFAULT_PROFILE_PICTURE_URL =
-        "https://firebasestorage.googleapis.com/v0/b/social-graph-5b3c9.appspot.com/o/default-profile-picture.png?alt=media&token=94ccebfd-f120-4240-9414-e34b98e59762"
+    const val DEFAULT_PROFILE_PICTURE_URL = "https://firebasestorage.googleapis.com/v0/b/social-graph-5b3c9.appspot.com/o/default-profile-picture.png?alt=media&token=94ccebfd-f120-4240-9414-e34b98e59762"
     const val MAX_USERNAME_LENGTH = 18
     const val MAX_PASSWORD_LENGTH = 18
     const val MIN_USERNAME_LENGTH = 4
@@ -13,5 +12,8 @@ object Constants {
     const val MAX_NAME_ERROR = "max name length 8!!!"
     const val MIN_PASSWORD_ERROR = "min password length 4!!!"
     const val MAX_PASSWORD_ERROR = "max password length 8!!!"
-    const val DEFAULT_ERROR_CASE = "No Error"
+    const val USER_DB_PATH = "USER"
+    const val USER_POST_PATH = "POST"
+    const val USER_COMMENTS_PATH = "COMMENTS"
+
 }
