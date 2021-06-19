@@ -18,6 +18,7 @@ import com.akshatsahijpal.socialgraph.ui.auth.vm.LoginViewModel
 import com.akshatsahijpal.socialgraph.ui.mainpage.MainPageActivity
 import com.akshatsahijpal.socialgraph.ui.util.snackBar
 import com.akshatsahijpal.socialgraph.util.EventObserver
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,6 +37,7 @@ class RegistrationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+
         listenToObserver()
         _binding.apply {
             LoginButton.setOnClickListener {
