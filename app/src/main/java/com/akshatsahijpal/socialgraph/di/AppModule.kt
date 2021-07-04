@@ -5,6 +5,7 @@ import com.akshatsahijpal.socialgraph.R
 import com.akshatsahijpal.socialgraph.repository.auth.AuthRepoC
 import com.akshatsahijpal.socialgraph.repository.main.MainBulkRepository
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import dagger.Module
@@ -34,7 +35,7 @@ object AppModule {
     @Provides
     fun provideGlideInstance(
         @ApplicationContext context: Context
-    ) = Glide.with(context).setDefaultRequestOptions(
+    )  = Glide.with(context).setDefaultRequestOptions(
         RequestOptions().placeholder(R.drawable.ic__cloud).error(R.drawable.ic_baseline_mood_bad_24)
             .diskCacheStrategy(
                 DiskCacheStrategy.DATA

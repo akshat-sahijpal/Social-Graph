@@ -25,6 +25,14 @@ class PostCreationViewModel @Inject constructor(
     private var _postStatus = MutableLiveData<Event<Resource<Any>>>()
     var observerPostStatus: LiveData<Event<Resource<Any>>> = _postStatus
 
+
+    private var _uriStatus = MutableLiveData<Uri>()
+    var observeUriStatus: LiveData<Uri> = _uriStatus
+
+    fun setURI(uri: Uri) {
+        _uriStatus.postValue(uri)
+    }
+
     fun createPost(imageUri: Uri, text: String) {
         if (text.isEmpty()) {
             _postStatus.postValue(Event(Resource.Fail(message = Constants.EMPTY_FIELD_ERROR)))
